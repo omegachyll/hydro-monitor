@@ -1,0 +1,15 @@
+# sw-factory configuration for this repo.
+default_runtime: claude      # claude | copilot
+default_model: null          # null = runtime's default
+
+# Per-agent overrides and maturity level (L0 manual, L1 approve each action, L2 auto + human gate, L3 fully auto).
+agents:
+  project:   {level: L0}
+  triage:    {level: L0}
+  spec:      {level: L0}
+  implement: {level: L0}
+  fix:       {level: L0}
+  review:    {level: L0}   # switch to `runtime: copilot` for cross-model review once Copilot is verified
+  learn:     {level: L0}
+
+worktrees_dir: ../{repo}.worktrees
